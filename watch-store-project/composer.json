@@ -1,0 +1,13 @@
+{
+    "name": "jehan/watch-store-project",
+    "description": "\"A oniline watch store\"",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "JehanMuthu",
+            "email": "jehanmuthu22@gmail.com"
+        }
+    ],
+    "require": {}
+}

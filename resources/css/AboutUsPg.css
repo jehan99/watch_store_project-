@@ -1,0 +1,157 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+
+
+.main-sec{
+    background-image:url("https://images.pexels.com/photos/100733/pexels-photo-100733.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 700px;
+    padding-top: 2%;
+
+
+}
+
+
+.info-sec{
+        color: white;
+        width: 600px;
+        margin-left: 20%;
+        padding-top: 7%;
+}
+
+.info-sec p {
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+.img-1{
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+.sec-1{
+    background-color: rgb(216, 148, 127);
+    height:400px;
+    width: 100%;
+}
+
+.info-sec-1{
+    width: 700px;
+    margin-top: -450px;
+    margin-left: 54%;
+    
+}
+
+.info-sec-1 p{
+font-size: 22px;
+margin-top: 20px;
+}
+
+.sec-2{
+    background-color: rgb(202, 195, 91);
+    height: 400px;
+    width: 100%;
+    margin-top: 260px;
+}
+
+.img-2{
+    position: relative;
+    left:1220px;
+    bottom: 100px;
+}
+
+.info-sec-2{
+    width: 700px;
+    margin-top: -300px;
+    margin-left: 10%;
+}
+
+.info-sec-2 p{
+    font-size: 22px;
+    margin-top: 20px;
+    }
+
+    .footer-sec1{
+        display: flex;
+        background-color: rgb(59, 59, 59);
+        height: 300px;
+        width: 100%;
+        position: relative;
+        margin-top: 160px;
+        color: white;
+        padding-left: 230px;
+        padding-top: 60px;
+    }
+    
+    .F-s1{
+        margin-right:130px;
+    }
+    
+    .F-s1 h2{
+        margin-bottom:15px;
+    }
+    
+    .F-s1 p{
+        margin-bottom:11px;
+        margin-left:20px ;
+    }
+    
+    
+    .F-s3{
+        margin-right:130px;
+    
+    }
+    
+    .F-s3 .cn{
+        background-color: rgb(70, 70, 70);
+        height: 30px;
+        width: 100px;
+        border-style: solid;
+        border-color:white ;
+        text-align: center;
+        margin-bottom: 20px;
+        
+    }
+    
+    .F-s3 hr{
+        color: #ffffff;
+        margin-bottom: 20px;
+    }
+    .phn{
+        margin-bottom: 15px;
+    }
+    
+    .fa-instagram, .fa-facebook, .fa-x-twitter{
+        font-size: 40px;
+    }
+    
+    .F-s4{
+        margin-left: 150px;
+    }
+    
+    .F-s4 h2{
+        margin-bottom: 30px;
+    }
+    
+    .F-s4 img{
+    border-radius: 260px;
+    
+    }
+    
+    .footer-sec2{
+        height:50px;
+        width: 100%;
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding-top: 15px;
+    }
+    
+    
