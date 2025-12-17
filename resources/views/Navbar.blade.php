@@ -1,8 +1,8 @@
 
 
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
 @vite(['resources/css/Navbar.css'])
-
-
 
 <nav class="navbar">
 
@@ -21,22 +21,28 @@
 
 <a href="{{ route('displayAccount') }}">View Account Details</a>
 
-<a href="{{ route('displayAccount') }}">Cart</a>
+<a href="{{ route('cart.show') }}">
+    Carted Items: <span id="cart-count">
+        {{ auth()->user()->cart()->sum('quantity') }}
+    </span>
+</a>
 
 <form action="{{ route('logout') }}" method="POST"> 
 @csrf
 <button type="submit">LogOut</button> 
 
-
-
-
 </form>
+
+</div>
 
 
 <script>
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const button = document.getElementById('dropdownButton');
     const menu = document.getElementById('dropdownMenu');
+    
 
     // Toggle dropdown visibility
     button.addEventListener('click', function(event) {
@@ -49,9 +55,29 @@ document.addEventListener('DOMContentLoaded', function() {
         menu.style.display = 'none';
     });
 });
+
+
+
 </script>
+
+
+@else
+
+
+ <a href="{{ route('displaylLoginPage') }}"  id="loginshow">
+        Login </a>
+
 
 
     @endif
 
+
+
+
+
+
 </nav>
+
+
+
+

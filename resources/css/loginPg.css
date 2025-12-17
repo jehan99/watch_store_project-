@@ -10,7 +10,7 @@ background-repeat: no-repeat;
 
 .login-form{
     width:600px;
-    background-image:linear-gradient(rgb(126, 96, 1), rgb(80, 48, 1));
+    background-image:linear-gradient(rgba(126, 97, 1, 0.747), rgb(80, 48, 1));
     margin: auto;
     display: grid;
     place-items: center; /* centers both vertically and horizontally */

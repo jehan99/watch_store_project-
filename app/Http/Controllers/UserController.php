@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -29,7 +30,7 @@ class UserController extends Controller
        session(['user_name' => $user->name]);
 
         return 
-        redirect('HomePage');
+        redirect('/HomePage');
 
 
     }
@@ -38,7 +39,7 @@ class UserController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         
-        return redirect()->route('showLoginForm');
+        return redirect('HomePage');
         
             }
             
@@ -81,6 +82,10 @@ $user = Auth::user();
 
             return view('/UserAccountPg', compact('user'));
         }
+
+
+
+       
 
 }
 

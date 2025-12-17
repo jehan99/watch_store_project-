@@ -1,6 +1,6 @@
 *{
     box-sizing: border-box;
-
+margin: 0px;
 }
 
 
@@ -78,6 +78,7 @@ margin-top: -692px;
     font-size: 22px;
     cursor: pointer;
     border: 2px solid rgb(50, 103, 182);
+    border-radius: 15px;
 
 
     
@@ -101,6 +102,8 @@ margin-top: -692px;
     background-color: rgb(16, 139, 67);
     border: 2px solid rgb(16, 139, 67);
     color: #ffffff;
+    border-radius: 15px;
+
 
 
 

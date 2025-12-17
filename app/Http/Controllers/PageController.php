@@ -20,4 +20,21 @@ public function routeAboutUsPg()
 
 
 
+public function directDeliveryPg()
+    {
+        return view('DeliverInfoPg');
+
 }
+
+
+
+public function directHomePg()
+    {
+        return view('HomePage');
+
+}
+
+
+
+}
+

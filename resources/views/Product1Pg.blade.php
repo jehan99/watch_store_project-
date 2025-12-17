@@ -5,26 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
   
-<link rel="stylesheet" href="HomeStyles.css"> 
-<link rel="stylesheet" href="Product1Pg.css"> 
+@vite(['resources/css/Product1Pg.css'])
 
 <!--<link rel="stylesheet"  href="lightbox.css"> -->
 
 </head>
 
-
-    <nav class="navbar">
-
-        <h1> My Watch Store</h1>
-        
-        <div class="nav-sections">
-        <p><a href="HomePage.html"> Home </a></p>
-        <p ><a href="AboutUsPage.html">About Us</a></p>
-        <p> <a href="ContactUsPage.html">Contact Us </a></p>
-        
-        </nav>  
+ 
     
 <body>
+
+@include('Navbar')
 
     <!-- Cassio W-218HD-1AV|C020HD-->
 
@@ -69,7 +60,16 @@
 <h1 style="color: brown;"> Rs: 26, 500.00</h1>
 
 <div class="btn-sec">
-<a href="DeliverInfoPg.html"><button class="btn-order" > Place Order</button></a> <button class="btn-cart1"> Add to Cart</button>
+<a href="{{route('deliveryData')}}"><button class="btn-order" > Place Order</button></a> 
+
+
+<button class="btn-cart1"
+onclick="addToCart({
+    name: 'Cassio W-218HD-1AV| C020HD',
+    price: 2000,
+    image: 'https://anix.lk/wp-content/uploads/2022/10/anix.lk_.Casio_.W-218hd-1a-200x230.png'
+})"
+> Add to Cart</button>
 
 
 

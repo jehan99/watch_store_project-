@@ -30,5 +30,7 @@
 
 </div>
 
+@include('Footer')
+
 </body>
 </html>

@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\DeliveryInfoController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +20,7 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('UserRegPg');
+    return view('HomePage');
 });
 
 
@@ -38,9 +42,30 @@ Route::get('/about_us_pg', [PageController::class, 'routeAboutUsPg'])->name('dis
 
 
 
+Route::middleware('auth')->group(function () {
+    Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('cart.add');
+    Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
+});
+
+
+Route::get('/delivery_info', [PageController::class, 'directDeliveryPg'])->name('deliveryData');
+
+Route::get('/home_page', [PageController::class, 'directHomePg'])->name('displayHomePg');
+
+Route::middleware('auth')->group(function () {
+    Route::post('/cart/delete', [CartController::class, 'deleteCartItem'])->name('cart.delete');
+});
+
+
+Route::post('/cart/increment', [CartController::class, 'incrementQuantity'])->name('cart.increment');
+Route::post('/cart/decrement', [CartController::class, 'decrementQuantity'])->name('cart.decrement');
 
 
 
+//hanndle delivery info
+Route::post('/delivery', [DeliveryController::class, 'store'])
+    ->name('delivery.data')
+    ->middleware('auth');
 
 
 
@@ -58,7 +83,6 @@ Route::get('/homePg-registration', function () {
 Route::get('/watch-product1', function () {
     return view('Product1Pg'); // User registration page
 })->name('product1');
-
 
 
 
