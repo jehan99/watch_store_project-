@@ -31,7 +31,17 @@ public function directDeliveryPg()
 public function directHomePg()
     {
         return view('HomePage');
+}
 
+
+public function directDeliveryPgToOrderSummery()
+    {
+        return view('OrderSummeryPg');
+}
+
+
+public function directToChangePasswordPg(){
+    return view('changePasswordPg');
 }
 
 

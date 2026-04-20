@@ -1,0 +1,92 @@
+
+
+
+#main-dropzone{
+    height:300px !important;
+    width:300px !important;
+    padding:20px !important;
+    border: 2px dashed #ccc;   /* optional: show border */
+    border-radius: 8px;         /* optional: rounded corners */
+}
+
+.dropzone .dz-progress {
+    display: none !important;
+}
+
+
+.dropzone .dz-preview:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.dropzone .dz-preview:hover .dz-image img {
+    filter: none !important;
+}
+
+
+
+.gallery-dropzone {
+    width: 220px;          
+    height: 220px;       
+    border: 2px dashed #ccc;
+    border-radius: 6px;
+    padding:20px !important;
+
+    background-color: #f8f8f8;
+  }
+ 
+  .dropzone {
+    position: relative;
+    padding: 0;
+}
+
+.dropzone .dz-preview {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    position: relative;
+}
+
+.dropzone .dz-image {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.dropzone .dz-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Remove button fix */
+.dropzone .dz-remove {
+    position: absolute;
+    bottom: 5px;
+    left: 18px;
+    z-index: 1000;   /* important */
+    background: white;
+    padding: 4px 6px;
+    font-size: 12px;
+    text-decoration: none;
+    border-radius: 3px;
+    background-color: transparent;
+    color:white;
+}
+
+
+
+.gallery-images{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+@media (max-width: 450px) {
+
+    .gallery-dropzone {
+        width: 200px;          
+      
+      }
+
+}

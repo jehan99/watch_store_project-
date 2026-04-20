@@ -1,83 +1,136 @@
 
+@php
+use Illuminate\Support\Facades\Auth;
+@endphp
 
-<meta name="csrf-token" content="{{ csrf_token() }}">
+<nav class="navbar navbar-expand-lg bg-body-tertiary" >
+  <div class="container-fluid">
 
-@vite(['resources/css/Navbar.css'])
+    <h1>
+      <a href="{{ route('homePage') }}" style="cursor:pointer; margin-left:20px; text-decoration:none; color:white;">
+        My Watch Store
+      </a>
+    </h1>
 
-<nav class="navbar">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<h1> <a href="{{route('viewHomePage')}}" style="cursor:pointer;"> My Watch Store </a> </h1>
+    <div class="collapse navbar-collapse justify-content-center text-center " id="navbarTogglerDemo02">
 
-<div class="nav-sections">
+      <!-- Left Side Links -->
+      <ul class="navbar-nav me-auto  mb-lg-0 justify-content-end w-100 fs-5 align-items-center">
+      <hr class="d-lg-none w-100 mx-auto" style="color: white;">
 
-<p ><a href="{{route('displayAboutUs')}}">About Us</a></p>
-<p> <a href="{{route('displayContactUs')}}">Contact Us </a></p>
+        <li class="nav-item me-3">
+  <a class="nav-link {{ request()->routeIs('homePage') ? 'active' : '' }}" 
+     href="{{ route('homePage') }}">
+     Home |
+  </a>
+</li>
 
-@if(Auth::check())
+<li class="nav-item me-3">
+  <a class="nav-link {{ request()->routeIs('displayAboutUs') ? 'active' : '' }}" 
+     href="{{ route('displayAboutUs') }}">
+     About Us |
+  </a>
+</li>
 
-<button class="dropdown-btn" id="dropdownButton" >  Hi, {{ Auth::user()->name }} </button>
+<li class="nav-item me-4">
+  <a class="nav-link {{ request()->routeIs('displayContactUs') ? 'active' : '' }}" 
+     href="{{ route('displayContactUs') }}">
+     Contact Us |
+  </a>
+</li>
+        <hr class="d-lg-none w-100 mx-auto" style="color: white;">
 
-<div class="dropdown-content" id="dropdownMenu">
+      <!-- Right Side (Auth Section) -->
+      <li class="nav-item me-2 mt-2 mt-lg-1 mb-4 mb-lg-0 ">
+      @if(Auth::check())
+      <div class="dropdown me-3 fs-6">
+        <button class="btn btn-secondary dropdown-toggle fs100" type="button" data-bs-toggle="dropdown">
+          Hi, {{ Auth::user()->name }}
+        </button>
 
-<a href="{{ route('displayAccount') }}">View Account Details</a>
+        <ul class="dropdown-menu dropdown-menu-end">
 
-<a href="{{ route('cart.show') }}">
-    Carted Items: <span id="cart-count">
-        {{ auth()->user()->cart()->sum('quantity') }}
-    </span>
-</a>
+          <li>
+            <a class="dropdown-item fs-5" href="{{ route('displayAccount') }}">
+              View Account Details
+            </a>
+          </li>
+          @if(auth()->user()->role !== 'admin')
 
-<form action="{{ route('logout') }}" method="POST"> 
-@csrf
-<button type="submit">LogOut</button> 
+          <li>
+            <a class="dropdown-item fs-5" href="{{ route('cart.show') }}">
+           Cart Item: <span id="cart-count">  {{ auth()->user()->cart()->sum('quantity') }}</span> 
+            </a>
+          </li>
+         @endif
+          @if(auth()->user()->role === 'admin')
+          <li>
+            <a class="dropdown-item fs-5" href="{{ route('admin.dashboard') }}">
+             Admin Panel
+            </a>
+          </li>
+          @endif
 
-</form>
+          @if(auth()->user()->role !== 'admin')
+          <li>
+            <a class="dropdown-item fs-5" href="{{ route('user.orders') }}">
+           All Orders
+            </a>
+          </li>
+          @endif
 
-</div>
+          <li>
+            <form action="{{ route('logout') }}" method="POST">
+              @csrf
+              <button class="dropdown-item fs-5" type="submit">Logout</button>
+            </form>
+          </li>
 
+        </ul>
+      </div>
 
-<script>
+      @else
+      <a href="{{ route('login') }}" class="me-4" style="text-decoration: none; color:white">
+        Login
+      </a>
+      @endif
 
+      </li>
+      
 
-document.addEventListener('DOMContentLoaded', function() {
-    const button = document.getElementById('dropdownButton');
-    const menu = document.getElementById('dropdownMenu');
-    
+      </ul>
 
-    // Toggle dropdown visibility
-    button.addEventListener('click', function(event) {
-        event.stopPropagation(); // Prevent the click from bubbling up
-        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    });
-
-    // Close the dropdown when clicking outside
-    document.addEventListener('click', function() {
-        menu.style.display = 'none';
-    });
-});
-
-
-
-</script>
-
-
-@else
-
-
- <a href="{{ route('displaylLoginPage') }}"  id="loginshow">
-        Login </a>
-
-
-
-    @endif
-
-
-
-
-
-
+    </div>
+  </div>
 </nav>
 
+<style>
 
+/* active color */
+
+.nav-link.active {
+  color: #FFD700 !important;
+}
+
+/* underline effect */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  background-color: #FFD700;
+  transition: 0.3s;
+}
+
+</style>
 
 

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Delivery extends Model
 {
+    protected $table = 'delivery_info';
     
     protected $fillable = [
         'user_id',

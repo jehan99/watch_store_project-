@@ -1,57 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
-        <title>Document</title>
+@extends('layouts.app')
 
-        <link rel="stylesheet" href="HomeStyles.css">
-        <link rel="stylesheet" href="ContactUsPg.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
- integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
- crossorigin="anonymous" referrerpolicy="no-referrer" />
+@section('title', 'contact-us-page')
 
- @vite(['resources/css/ContactUsPg.css'])
+@section('content')
 
-</head>
- 
+<div class="bg-con">
+<div class="container pt-5 pb-5 " style="font-family:Arial, Helvetica, sans-serif" data-aos="fade-up">
 
-<body>
+
+<h2 class="text-center mb-3"> CONTACT US</h2>
+
+<div class=" d-flex justify-content-center mb-4">
+<img src="https://images.pexels.com/photos/8101355/pexels-photo-8101355.jpeg" width="400px" style="border-radius: 20px;" >
+</div>
     
-@include('Navbar')
+<div class="row justify-content-center" data-aos="fade-up">    
+<div class="card col-10 col-lg-5  text-center pt-3" >
+<i class="fa-solid fa-phone" style="font-size:50px; margin-bottom:1rem;"></i>
+<h2>Phone</h2>
+<p class="fs-5">+94 7788554</p >
 
+</div>
+<div class="card col-10 col-lg-5  text-center pt-3 pb-4" >
+<i class="fa-solid fa-envelope" style="font-size:50px; margin-bottom:1rem;"></i>
+<h2>Email</h2>
+<p class="fs-5">MywatchStore@gmail.com</p >
 
-<div class="sec-c1"> 
-
-    <img src="https://images.pexels.com/photos/10677957/pexels-photo-10677957.jpeg?auto=compress&cs=tinysrgb&w=600" height="500px" class="img-c1"> 
-
-<div class="info-sec-c1">
-    <h1>Contact Us</h1>
- <h2> Phone1: 011-2234226</h2>
- <h2> Phone2: 077-5433377</h2>
- 
-<h1>Email</h1>
-<h2>MYpetStoreSri @gmail.com</h2>
-
-<h1>Social Media</h1>
-<i class="fa-brands fa-instagram"></i>
-<i class="fa-brands fa-facebook"></i>
-<i class="fa-brands fa-x-twitter"></i>
-
-<h1>Address</h1>
-<h2>No:302/1</h2>
-<h2>Sri Jayawardanapura, Kotte</h2>
-<h2>Colombo-1</h2>
+</div>  
 
 </div>
 
+<div class="row justify-content-center"  data-aos="fade-up">
+<div class="card col-10 col-lg-5 text-center pt-3 pb-4" >
+<i class="fa-solid fa-location-dot" style="font-size:50px; margin-bottom:1rem;"></i>
+<h2>location</h2>
+<p class="fs-5">MywatchStore@gmail.com</p >
+
+
+
 </div>
 
-@include('Footer')
-</body>
+<div class="card col-10 col-lg-5 text-center pt-3 pb-4" >
+<i class="fa-regular fa-clock" style="font-size:50px; margin-bottom:1rem;"></i>
+<h2>Working hours</h2>
+<p class="fs-5">24 / 7</p >
+
+</div>  
+
+</div>  
+    
+</div>  
 
 
-
-
-
-</html>
+@endsection

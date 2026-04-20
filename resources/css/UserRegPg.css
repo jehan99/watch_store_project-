@@ -1,0 +1,20 @@
+.bg-reg{
+
+    background-image:url("https://images.pexels.com/photos/1034425/pexels-photo-1034425.jpeg?auto=compress&cs=tinysrgb&w=600") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.bg-reg-1{
+    background: rgba(255, 255, 255, 0.1); /* transparent white */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* for Safari */
+  
+    border-radius: 15px;
+    padding: 25px;
+    color: white;
+  
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
