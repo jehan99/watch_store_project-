@@ -84,7 +84,15 @@ return response()->json([
 }
 
 public function displayProductsAdmin(){
-     $products = Product::latest()->get(); // get all products
+      $products = Product::orderByRaw("
+        CASE 
+            WHEN availability = 'out_of_stock' THEN 0
+            ELSE 1
+        END
+    ")
+    ->latest()
+    ->get();    
+
       return view('admin.view-products', compact('products')); 
     
 }
