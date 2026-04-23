@@ -25,6 +25,6 @@ object-position: center 70%;
     height: 250px;          /* fixed box */
     object-fit: cover;      /* IMPORTANT: fills box without distortion */
     object-position: center;
-    background: #f5f5f5;    /* optional nice fallback */
+    background: #ececec;    /* optional nice fallback */
     border-radius: 10px;
 }
