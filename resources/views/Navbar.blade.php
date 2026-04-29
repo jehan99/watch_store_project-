@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
     <h1>
       <a href="{{ route('homePage') }}" style="cursor:pointer; margin-left:20px; text-decoration:none; color:white;">
-        My Watch Store
+       <img src="{{asset('images/LOGO2.png')}}" alt="LOGO" height="60" >
       </a>
     </h1>
 
