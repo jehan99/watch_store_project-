@@ -5,8 +5,9 @@ export default defineConfig({
     plugins: [
         laravel({
             input: ['resources/css/App.css',
+
                 'resources/js/app.js',
-                 'resources/js/admin.js'
+                'resources/js/admin.js'
                 // 'resources/css/userRegStyles.css'
 
 

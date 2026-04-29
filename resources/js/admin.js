@@ -3,8 +3,8 @@
 import './bootstrap';
 import'../css/addProductsPg.css'
 import '../css/UpdateProductPg.css'
+import '../css/adminSideBar.css'
 
 
 
-//JS Files
-import './addProductsPg.js'
+

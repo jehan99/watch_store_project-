@@ -1,5 +1,5 @@
 
-<div class="bg-dark text-white p-3 vh-100  pt-5 position-fixed ">
+<div class="text-white p-3 vh-100  pt-5 position-fixed admin-sidebar-bg">
 
   <a href="{{route('admin.dashboard')}}" style="text-decoration: none; color:white"><h4 class="mb-4"><i class="fa-solid fa-user-tie me-1"></i>ADMIN DASHBOARD</h4></a>
 
